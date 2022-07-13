@@ -6,7 +6,7 @@ class ClioUtils(object):
         self.base_url = "https://clio.columbia.edu/catalog/"
 
     def get_clio_marc(self, bibid):
-        """Retrieve MARC data from CLIO via http
+        """Retrieve MARC data from CLIO via http.
 
         Args:
             bibid (str): BIBID
@@ -26,14 +26,17 @@ class ClioUtils(object):
         return response.content
 
     def check_clio_status(self, bibid):
-        """Check that a BIBID has a publicly available CLIO record. If using in bulk, add sleep of .5 sec or more to avoid "too many requests" error.
+        """Check that a BIBID has a publicly available CLIO record.
+
+        If using in bulk, add sleep of .5 sec or more to avoid "too many requests"
+        error.
 
         Args:
             bibid (str): BIBID
 
-    Returns:
-        int: HTTP status code
-    """
+        Returns:
+            int: HTTP status code
+        """
         record_url = f"{self.base_url}{bibid}"
         response = requests.get(record_url)
         return response.status_code

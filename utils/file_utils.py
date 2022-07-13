@@ -57,7 +57,7 @@ def file_cleanup(_dir, _days):
 
 
 def find_config(name="config.ini"):
-    """Get the abs path to config.ini file, based on sys.path
+    """Get the abs path to config.ini file, based on sys.path.
 
     Args:
         name (str, optional): config file name. Defaults to "config.ini".

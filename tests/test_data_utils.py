@@ -3,7 +3,6 @@ import unittest
 from utils.data_utils import (
     dedupe_array,
     diff,
-    fix_cr,
     pickle_it,
     sort_array,
     trim_array,
@@ -19,11 +18,6 @@ class TestDataUtils(unittest.TestCase):
 
     def test_diff(self):
         """docstring for test_diff"""
-
-    pass
-
-    def test_fix_cr(self):
-        """docstring for test_fix_cr"""
 
     pass
 

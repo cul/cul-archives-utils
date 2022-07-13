@@ -1,10 +1,9 @@
 import copy
 import pickle
-import re
 
 
 def pickle_it(obj, path):
-    """Save object as pickle file
+    """Save object as pickle file.
 
     Args:
         obj (dict, list): Python object (e.g., dict) to pickle
@@ -16,7 +15,7 @@ def pickle_it(obj, path):
 
 
 def unpickle_it(path):
-    """Unpickle a pickle file
+    """Unpickle a pickle file.
 
     Args:
         path (str): Path to pickle to unpickle
@@ -62,7 +61,10 @@ def dedupe_array(data, col):
 
 
 def trim_array(data, indices):
-    """Trim columns from array. Provide column indexes as list to remove (starts with 0). Leaves original array intact (by deep copying)
+    """Trim columns from array.
+
+    Provide column indexes as list to remove (starts with 0). Leaves original array
+    intact (by deep copying)
 
     Args:
         data (list): 2-dimensional array (list of lists)
@@ -79,7 +81,7 @@ def trim_array(data, indices):
 
 
 def sort_array(data, match_key=0, ignore_heads=False):
-    """Sort an array based on given column (1st one by default)
+    """Sort an array based on given column (1st one by default).
 
     Args:
         data (list): 2-dimensional array (list of lists)
@@ -96,15 +98,3 @@ def sort_array(data, match_key=0, ignore_heads=False):
     if ignore_heads:
         data_sorted.insert(0, heads)
     return data_sorted
-
-
-def fix_cr(_str):
-    """Replace all \x0D with \n in string
-
-    Args:
-        _str (str): Input string
-
-    Returns:
-        str: Output string
-    """
-    return re.sub(r"\x0D", "\n", _str, flags=re.DOTALL)

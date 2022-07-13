@@ -4,14 +4,14 @@ from io import StringIO
 
 
 def saxon_process(saxon_path, in_file, transform_file, out_file=None, the_params=None):
-    """Process an XSLT transformation using Saxon. 
+    """Process an XSLT transformation using Saxon.
 
     Args:
         saxon_path (str): path to Saxon (to saxon-9.8.0.12-he.jar or similar)
         in_file (str): Path to input XML
         transform_file (str): Path to XSLT
-        out_file (str): Path to output file. Use None to send to stdout. Defaults to None.
-        the_params (str, optional): Additional parameters, as defined by stylesheet. Defaults to None.
+        out_file (str): Path to output file. Use None to send to stdout.
+        the_params (str, optional): Additional parameters, as defined by stylesheet.
 
     Raises:
         Exception: "SAXON ERROR: <error message>
@@ -79,6 +79,7 @@ def jing_process(jing_path, file_path, schema_path, compact=False):
 
 def xml_to_array(in_file, xslt_file, delim="|", params=" "):
     """Process XML via XSLT to tabular format, and then return as a list of lists.
+
     Requires XSLT that outputs delimited plain text.
 
     Args:
