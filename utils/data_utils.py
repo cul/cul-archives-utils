@@ -44,11 +44,11 @@ def diff(first, second):
 
 
 def dedupe_array(data, col):
-    """For a 2D array (list of lists), remove rows that have duplicate data in a given column. Provide column on which to match dupes (starts with 0).
+    """For a 2D array (list of lists), remove rows that have duplicate data in a given column. Provide index on which to match dupes.
 
     Args:
         data (list): 2-dimensional array
-        col (int): Column to match for duplicates (starts with 0)
+        col (int): index to match for duplicates
 
     Returns:
         list: Result array with duplicates removed.
