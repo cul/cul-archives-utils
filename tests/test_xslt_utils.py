@@ -1,20 +1,23 @@
 import unittest
 
-from utils.xslt_utils import jing_process, saxon_process, xml_to_array
+from utils.xslt_utils import SaxonUtils, JingUtils
 
 
-class TestXsltUtils(unittest.TestCase):
-    def test_jing_process(self):
-        """docstring for test_jing_process"""
-
-    pass
-
+class TestSaxonUtils(unittest.TestCase):
     def test_saxon_process(self):
-        """docstring for test_saxon_process"""
 
-    pass
+        pass
 
     def test_xml_to_array(self):
-        """docstring for test_xml_to_array"""
 
-    pass
+        pass
+
+
+class TestJingUtils(unittest.TestCase):
+    def test_jing_process(self):
+
+        pass
+
+    def test_jing_process_batch(self):
+
+        pass
