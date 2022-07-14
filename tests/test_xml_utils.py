@@ -1,15 +1,8 @@
 import unittest
 from unittest import mock
 
-
+from tests.helpers import set_subprocess_mock_attrs
 from utils.xml_utils import JingUtils, SaxonUtils
-
-
-def set_subprocess_mock_attrs():
-    process_mock = mock.Mock()
-    attrs = {"communicate.return_value": ("output".encode(), "")}
-    process_mock.configure_mock(**attrs)
-    return process_mock
 
 
 class TestSaxonUtils(unittest.TestCase):
