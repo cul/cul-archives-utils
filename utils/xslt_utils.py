@@ -16,7 +16,7 @@ class SaxonUtils(object):
         self.xml_file = xml_file
         self.xslt_file = xslt_file
 
-    def saxon_process(self, transform_file, out_file=None, the_params=None):
+    def saxon_process(self, out_file=None, the_params=None):
         """Process an XSLT transformation using Saxon.
 
         Args:
@@ -54,21 +54,21 @@ class SaxonUtils(object):
         else:
             raise Exception(result[1].decode("utf-8"))
 
-        def xml_to_array(self, delim="|", params=" "):
-            """Process XML via XSLT to tabular format, and then return as a list of lists.
+    def xml_to_array(self, delim="|", params=" "):
+        """Process XML via XSLT to tabular format, and then return as a list of lists.
 
-            Requires XSLT that outputs delimited plain text.
+        Requires XSLT that outputs delimited plain text.
 
-            Args:
-                delim (str, optional): tabular delimiter character. Defaults to '|'.
-                params (str, optional): additional XSLT parameters. Defaults to " ".
+        Args:
+            delim (str, optional): tabular delimiter character. Defaults to '|'.
+            params (str, optional): additional XSLT parameters. Defaults to " ".
 
-            Returns:
-                list: 2-dimensional array (list of lists)
-            """
-            tabular = self.saxon_process(the_params=params)
-            f = StringIO(tabular)
-            return list(csv.reader(f, delimiter=delim))
+        Returns:
+            list: 2-dimensional array (list of lists)
+        """
+        tabular = self.saxon_process(the_params=params)
+        f = StringIO(tabular)
+        return list(csv.reader(f, delimiter=delim))
 
 
 class JingUtils(object):
