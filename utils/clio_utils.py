@@ -2,6 +2,8 @@ import requests
 
 
 class ClioUtils(object):
+    """Utilities to get data from CLIO, the Columbia Libraries Catalog"""
+    
     def __init__(self):
         self.base_url = "https://clio.columbia.edu/catalog/"
 
