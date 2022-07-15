@@ -13,10 +13,10 @@ from utils.data_utils import (
 class TestDataUtils(unittest.TestCase):
     def test_dedupe_array(self):
         my_duplicated_list = [
-            ["dog", "beagle", "elsie",],
+            ["dog", "beagle", "elsie"],
             ["cat", "tuxedo", "irma"],
             ["cat", "tabby", "irene"],
-            ["dog", "beagle", "dorothy",],
+            ["dog", "beagle", "dorothy"],
             ["cat", "tabby", "irene"],
         ]
         deduped = dedupe_array(my_duplicated_list, 1)
