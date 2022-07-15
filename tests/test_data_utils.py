@@ -1,6 +1,6 @@
 import unittest
 
-from utils.data_utils import dedupe_array, diff, sort_array, trim_array
+from utils.data_utils import dedupe_array, get_diff, sort_array, trim_array
 
 
 class TestDataUtils(unittest.TestCase):
@@ -16,12 +16,19 @@ class TestDataUtils(unittest.TestCase):
         self.assertEqual(len(deduped), 3)
 
     def test_diff(self):
-        pass
+        list1 = ["Vanilla", "Pistachio", "Strawberry", "Chocolate chip", "Neapolitan"]
+        list2 = ["Strawberry", "Butter pecan", "Chocolate chip", "Vanilla", "Coffee"]
+        diff = get_diff(list1, list2)
+        self.assertEqual(diff, ['Pistachio', 'Neapolitan'])
 
     def test_sort_array(self):
-        """docstring for test_sort_array"""
-
-    pass
+        my_list = [
+            ["Vanilla", "Pistachio", "Strawberry", "Chocolate chip", "Neapolitan"],
+            ["Strawberry", "Butter pecan", "Chocolate chip", "Vanilla", "Coffee"],
+            ["Vanilla", "Neapolitan", "Strawberry", "Coffee", "Salted caramel"],
+        ]
+        sorted_array = sort_array(my_list)
+        self.assertEqual(sorted_array[0][0], "Strawberry")
 
     def test_trim_array(self):
         my_list = [

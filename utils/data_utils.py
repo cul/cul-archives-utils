@@ -1,7 +1,7 @@
 import copy
 
 
-def diff(first, second):
+def get_diff(first, second):
     """Diff two lists. Return list of x - y (everything in x that is not in y). Reverse order to get inverse diff.
 
     Args:
