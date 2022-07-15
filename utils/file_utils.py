@@ -1,15 +1,14 @@
-import os
 import subprocess
-import sys
-import time
+from time import time
 
 
 def rsync_process(from_path, to_path, ssh_key_path=None, options=None):
-    """Rsync files in a given directory. Relies on SSH_KEY_PATH from config.
+    """Rsync files in a given directory.
 
     Args:
-        fromPath (str): Path to directory to sync from
-        toPath (str): Path to directory to sync to
+        from_path (str): Path to directory to sync from
+        to_path (str): Path to directory to sync to
+        ssh_key_path (str): Path to ssh config
         options (str, optional): Rsync additional option flags, e.g., "--exclude '*.zip'". Defaults to False.
 
     Returns:
@@ -34,38 +33,23 @@ def rsync_process(from_path, to_path, ssh_key_path=None, options=None):
         return result[0].decode("utf-8")
 
 
-def file_cleanup(_dir, _days):
+def remove_old_files(directory, days):
     """Remove files from a directory that are of a certain age.
 
     Args:
-        _dir (str): Path to directory
-        _days (int): Number of days beyond which old files should be deleted
-    """
-    # Remove files from a directory that are of a certain age.
-    now = time.time()
-    old = now - int(_days) * 24 * 60 * 60
-    # print(old)
-    for f in os.listdir(_dir):
-        path = os.path.join(_dir, f)
-        if os.path.isfile(path):
-            stat = os.stat(path)
-            # print("")
-            # print(stat.st_mtime)
-            if stat.st_mtime < old:
-                print("removing: ", path)
-                os.remove(path)
-
-
-def find_config(name="config.ini"):
-    """Get the abs path to config.ini file, based on sys.path.
-
-    Args:
-        name (str, optional): config file name. Defaults to "config.ini".
+        directory (pathlib.Path): Path to directory
+        days (int): Number of days beyond which old files should be deleted
 
     Returns:
-        str: path to config file
+        list: removed files
     """
-    for dirname in sys.path:
-        for root, dirs, files in os.walk(dirname):
-            if name in files:
-                return os.path.join(root, name)
+    now = time()
+    old = now - int(days) * 24 * 60 * 60
+    removed_files = []
+    files_to_remove = [
+        x for x in directory.iterdir() if x.is_file() and x.stat().st_mtime < old
+    ]
+    for f in files_to_remove:
+        f.unlink()
+        removed_files.append(f)
+    return removed_files

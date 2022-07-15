@@ -1,35 +1,7 @@
 import copy
-import pickle
 
 
-def pickle_it(obj, path):
-    """Save object as pickle file.
-
-    Args:
-        obj (dict, list): Python object (e.g., dict) to pickle
-        path (str): Path to output file
-    """
-    print("Saving pickle to " + str(path) + "...")
-    with open(path, "wb") as f:
-        pickle.dump(obj, f)
-
-
-def unpickle_it(path):
-    """Unpickle a pickle file.
-
-    Args:
-        path (str): Path to pickle to unpickle
-
-    Returns:
-        dict or list: The unpickled objects
-    """
-    print("Unpickling from " + str(path) + "...")
-    with open(path, "rb") as f:
-        output = pickle.load(f)
-    return output
-
-
-def diff(first, second):
+def get_diff(first, second):
     """Diff two lists. Return list of x - y (everything in x that is not in y). Reverse order to get inverse diff.
 
     Args:
@@ -44,11 +16,11 @@ def diff(first, second):
 
 
 def dedupe_array(data, col):
-    """For a 2D array (list of lists), remove rows that have duplicate data in a given column. Provide column on which to match dupes (starts with 0).
+    """For a 2D array (list of lists), remove rows that have duplicate data in a given column. Provide index on which to match dupes.
 
     Args:
         data (list): 2-dimensional array
-        col (int): Column to match for duplicates (starts with 0)
+        col (int): index to match for duplicates
 
     Returns:
         list: Result array with duplicates removed.
