@@ -1,6 +1,6 @@
 import unittest
 
-from utils.data_utils import dedupe_array, get_diff, sort_array, trim_array
+from cul_archives_utils.data_utils import dedupe_array, get_diff, sort_array, trim_array
 
 
 class TestDataUtils(unittest.TestCase):

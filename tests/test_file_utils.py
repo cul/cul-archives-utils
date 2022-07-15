@@ -2,7 +2,7 @@ import unittest
 from unittest import mock
 
 from tests.helpers import set_subprocess_mock_attrs
-from utils.file_utils import rsync_process
+from cul_archives_utils.file_utils import rsync_process
 
 
 class TestFileUtils(unittest.TestCase):

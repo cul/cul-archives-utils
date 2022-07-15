@@ -2,7 +2,7 @@ import unittest
 from unittest import mock
 
 from tests.helpers import set_subprocess_mock_attrs
-from utils.xml_utils import JingUtils, SaxonUtils
+from cul_archives_utils.xml_utils import JingUtils, SaxonUtils
 
 
 class TestSaxonUtils(unittest.TestCase):
@@ -14,7 +14,7 @@ class TestSaxonUtils(unittest.TestCase):
         ).saxon_process()
         self.assertTrue(processed_saxon)
 
-    @mock.patch("utils.xml_utils.SaxonUtils.saxon_process")
+    @mock.patch("cul_archives_utils.xml_utils.SaxonUtils.saxon_process")
     def test_xml_to_array(self, mock_saxon):
         mock_saxon.return_value = "some | data"
         array_from_xml = SaxonUtils(

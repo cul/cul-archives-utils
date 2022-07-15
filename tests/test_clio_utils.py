@@ -2,7 +2,7 @@ import unittest
 
 import responses
 
-from utils.clio_utils import ClioUtils
+from cul_archives_utils.clio_utils import ClioUtils
 
 
 class TestClioUtils(unittest.TestCase):
