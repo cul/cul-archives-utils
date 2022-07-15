@@ -1,13 +1,6 @@
 import unittest
 
-from utils.data_utils import (
-    dedupe_array,
-    diff,
-    pickle_it,
-    sort_array,
-    trim_array,
-    unpickle_it,
-)
+from utils.data_utils import dedupe_array, diff, sort_array, trim_array
 
 
 class TestDataUtils(unittest.TestCase):
@@ -25,11 +18,6 @@ class TestDataUtils(unittest.TestCase):
     def test_diff(self):
         pass
 
-    def test_pickle_it(self):
-        """docstring for test_pickle_it"""
-
-    pass
-
     def test_sort_array(self):
         """docstring for test_sort_array"""
 
@@ -44,8 +32,3 @@ class TestDataUtils(unittest.TestCase):
         trimmed = trim_array(my_list, [1, -1])
         self.assertEqual(len(trimmed[1]), 3)
         self.assertEqual(trimmed[0][-1], my_list[0][3])
-
-    def test_unpickle_it(self):
-        """docstring for test_unpickle_it"""
-
-    pass
