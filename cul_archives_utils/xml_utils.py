@@ -4,6 +4,8 @@ from io import StringIO
 
 
 class SaxonUtils(object):
+    """Utilities using the Saxon XSLT processor."""
+
     def __init__(self, saxon_path, xml_file, xslt_file):
         """Sets filepaths to Saxon executable, XML file to transform, and XSLT file.
 
@@ -72,6 +74,8 @@ class SaxonUtils(object):
 
 
 class JingUtils(object):
+    """Utilities using Jing."""
+
     def __init__(self, jing_path, schema_path, compact=False):
         """Sets filepaths to jing executable and schema, and whether to use "compact" RelaxNG schema format.
 

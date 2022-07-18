@@ -6,6 +6,14 @@ Python utility module for archives and collection data
 * Requests module
 * Responses module (to run tests)
 
+
+## Functionality
+
+* CLIO utils: Utilities to get data from CLIO, the Columbia Libraries Catalog
+* Data utils: Perform actions on lists
+* File utils: Perform actions on files
+* XML utils: Saxon and Jing utilities to work with XML data
+
 ## Contribution standards
 
 #### Style

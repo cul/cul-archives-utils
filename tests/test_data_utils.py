@@ -19,7 +19,7 @@ class TestDataUtils(unittest.TestCase):
         list1 = ["Vanilla", "Pistachio", "Strawberry", "Chocolate chip", "Neapolitan"]
         list2 = ["Strawberry", "Butter pecan", "Chocolate chip", "Vanilla", "Coffee"]
         diff = get_diff(list1, list2)
-        self.assertEqual(diff, ['Pistachio', 'Neapolitan'])
+        self.assertEqual(diff, ["Pistachio", "Neapolitan"])
 
     def test_sort_array(self):
         my_list = [

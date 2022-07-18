@@ -1,3 +1,6 @@
+"""Perform actions on files."""
+
+
 import subprocess
 from time import time
 
