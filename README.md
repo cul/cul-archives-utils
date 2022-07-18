@@ -2,7 +2,7 @@
 Python utility module for archives and collection data
 
 ## Requirements
-* Python 3 (tested on Python 3.9)
+* Python 3.7+
 * Requests module
 * Responses module (to run tests)
 
@@ -32,4 +32,4 @@ This project adheres to [Google’s docstring style guide](https://google.github
 
 #### Tests
 
-New code should  have unit tests. Tests are written in unittest style and run using [tox](https://tox.readthedocs.io/). 
+New code should  have unit tests. Tests are written in unittest style and run using [tox](https://tox.readthedocs.io/). To run the unit tests, specify the Python version using the `e` flag (see `tox.ini` for supported versions).
