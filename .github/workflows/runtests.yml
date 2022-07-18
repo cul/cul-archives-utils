@@ -10,7 +10,9 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.7", "3.8", "3.9", "3.10"]
-
+    
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
+    
     steps:
       - uses: actions/checkout@v3
 
