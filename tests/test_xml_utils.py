@@ -1,8 +1,8 @@
 import unittest
 from unittest import mock
 
-from tests.helpers import set_subprocess_mock_attrs
 from cul_archives_utils.xml_utils import JingUtils, SaxonUtils
+from tests.helpers import set_subprocess_mock_attrs
 
 
 class TestSaxonUtils(unittest.TestCase):

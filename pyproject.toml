@@ -10,5 +10,8 @@ version = "0.1.0"
 requires-python = ">=3.7"
 dynamic = ["dependencies"]
 
+[tool.setuptools]
+packages = ["cul_archives_utils"]
+
 [tool.setuptools.dynamic]
 dependencies = {file = "requirements.txt"}
